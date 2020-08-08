@@ -106,30 +106,82 @@
 # print("Maximum is", largest)
 # print("Minimum is", smallest)
 
-largest = None
-smallest = None
+# largest = None
+# smallest = None
 
-while True:
+# while True:
 
-        num = input("Enter a number: ")
-        if num == 'done':
-            break
-        num = int(num)
-        if largest is None or num > largest:
-            largest = num
-        elif smallest is None or num < smallest:
-            smallest = num
+#         num = input("Enter a number: ")
+#         if num == 'done':
+#             break
+#         num = int(num)
+#         if largest is None or num > largest:
+#             largest = num
+#         elif smallest is None or num < smallest:
+#             smallest = num
      
-        else:
-            print("Invalid input")
-            continue
+#         else:
+#             print("Invalid input")
+#             continue
 
-print("Maximum is", largest)
-print("Minimum is", smallest)
+# print("Maximum is", largest)
+# print("Minimum is", smallest)
+
+# STRING
+# int()
+# float()
+# variablename[startnum:endnum] stringslice
+# str.lower()
+# str.upper()
+# str.replace(old,new[ ,count])
+# str.capitalize()
+# str.center(width[ , fillchar])
+# str.endswith(suffix[ , start[ , end]])
+# str.find(sub[ , start[ , end]])
+# str
+# str
+# str
+# str
+# str
+# str
+# str
+
+
+# data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+# pos = data.find('.')
+# print(data[pos:pos+3])
+
+# Use words.txt as the file name
+# fname = input("Enter file name: ")
+# fh = open(fname)
+# for fx in fh:
+#     fy = fx.strip()
+#     print(fy)
+
+# f= open("guru99.txt","w+")
+# f.write("hello world")
+
+
+# handle = open(filename,mode)    like write read w and r
+# len()
+# startswith("abdcd")
+# rstrip() white space from right side 
+# lstrip() white space from left side 
+# stripped newline consider as white space
+# .read()
 
 
 
+# Use the file name mbox-short.txt as the file name
 
-data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
-pos = data.find('.')
-print(data[pos:pos+3])
+fname = input("Enter file name: ")
+fh = open(fname)
+count = 0
+average = 0
+for line in fh:
+    if not line.startswith("X-DSPAM-Confidence:") : continue
+    average += float(line[20:-1].strip())
+    count = count + 1
+    #print(line)
+    
+print("Average spam confidence:", (average/count))
