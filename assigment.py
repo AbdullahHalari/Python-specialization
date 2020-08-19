@@ -204,37 +204,88 @@
 # fruit[0] = 'b'
 # print(fruit)
 
-fname = input("Enter file name: ")
+# fname = input("Enter file name: ")
 
-fh = open(fname)
-count = 0
-for i in fh:
-    fx = i.strip()
-    fx = i.split()
-    if i.startswith('From:'):
-        print(fx[1])
-        count = count + 1   
+# fh = open(fname)
+# count = 0
+# for i in fh:
+#     fx = i.strip()
+#     fx = i.split()
+#     if i.startswith('From:'):
+#         print(fx[1])
+#         count = count + 1   
       
 
-print("There were", count, "lines in the file with From as the first word")
+# print("There were", count, "lines in the file with From as the first word")
+
+# fname = input("Enter file name: ")
+# fh = open(fname)
+
+# lst = list()
+
+# for line in fh:
+    
+#     x = line.rstrip()
+#     y = x.split()
+#     for i in y:
+#        if i in lst:
+#             continue
+            
+#        else:
+                
+#           lst.append(i) 
+    
+    
+# lst.sort()    
+# print(lst)
+
+#DICTIONARIES
+
+# dict()
+# .get()                   This method returns the value for the given key, if present in the dictionary.
+
+
+
+
+# x = dict()
+# x = {'hello': 2 , 'world':4 }
+# for i,j in x.items():
+#     print(i , j)
+# print(x.values())
+# print(x.items())
+# print(x.keys())
+
+# stuff = dict()
+# print(stuff['candy'])
+# stuff = dict()
+# print(stuff.get('candy',-1))
+
+
+# if key in counts:
+#     counts[key] = counts[key] + 1
+# else:
+#     counts[key] = 1
+
 
 fname = input("Enter file name: ")
+
 fh = open(fname)
-
-lst = list()
-
-for line in fh:
-    
-    x = line.rstrip()
-    y = x.split()
-    for i in y:
-       if i in lst:
-            continue
-            
-       else:
-                
-          lst.append(i) 
-    
-    
-lst.sort()    
-print(lst)
+count = dict()
+for i in fh:
+        
+    if not 'From ' in i:
+        continue
+    else:    
+        fx = i.split()
+        email = fx[1]
+        count[email] = count.get(email,0)+1
+     
+        
+x = None
+y = None
+for i,j in count.items():
+    if x is None or j > x:
+        y = i 
+        x = j 
+      
+print(y,x)
