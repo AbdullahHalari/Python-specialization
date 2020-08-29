@@ -267,25 +267,119 @@
 #     counts[key] = 1
 
 
-fname = input("Enter file name: ")
+# fname = input("Enter file name: ")
 
-fh = open(fname)
-count = dict()
-for i in fh:
+# fh = open(fname)
+# count = dict()
+# for i in fh:
         
-    if not 'From ' in i:
-        continue
-    else:    
-        fx = i.split()
-        email = fx[1]
-        count[email] = count.get(email,0)+1
+#     if not 'From ' in i:
+#         continue
+#     else:    
+#         fx = i.split()
+#         email = fx[1]
+#         count[email] = count.get(email,0)+1
      
         
-x = None
-y = None
-for i,j in count.items():
-    if x is None or j > x:
-        y = i 
-        x = j 
+# x = None
+# y = None
+# for i,j in count.items():
+#     if x is None or j > x:
+#         y = i 
+#         x = j 
       
-print(y,x)
+# print(y,x)
+
+# #TUPLES
+
+# x = (1,2,3)
+# print(x)
+
+# x , y = 3, 4
+# print(y)
+
+# x = { 'chuck' : 1 , 'fred' : 42, 'jan': 100}
+# y = x.items()
+# print(y)
+
+# days = ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')
+# print(days[2])
+
+# fname = input("Enter file name: ")
+
+# fh = open(fname)
+# count = dict()
+# for i in fh:
+        
+#     if not 'From ' in i:
+#         continue
+#     else:    
+#         fx = i.split()
+#         line=fx[5]
+#         email=line[0:2]
+        
+#         count[email] = count.get(email,0)+1
+        
+# lst=list()        
+# for value,count in count.items():
+#     lst.append((value,count))
+
+# lst.sort()
+# for value,count in lst:
+#     print(value,count)
+
+
+# regular expression 
+
+# re.search()
+# re.findall()
+
+
+# import re
+
+# x =  "hello 121 how 32 "
+# y = re.findall('[0-9]+',x)
+# print(y)
+
+# hand = "From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008"
+# num = list()
+# a = re.findall('\S+@\S+',hand)
+# num.append(a)
+# print(num)
+
+# hand = "From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008"
+# a = re.findall('^From (\S+@\S+)',hand)
+# print(a)
+
+# hand = open('mbox-short.txt')
+# numlist = list()
+# for line in hand:
+#     line = line.rstrip()
+#     stuff = re.findall('^X-DSPAM-Confidence: ([0-9.]+)',line)
+#     if len(stuff) != 1 : continue
+#     num = float(stuff[0])
+#     numlist.append(num)
+# print(numlist)     
+
+# x = 'From: Using the : character'
+# y = re.findall('^F.+:', x)
+# print(y)
+
+# import re
+
+hand = open('sum.txt')
+numlist = list()
+for line in hand:
+    stuff = re.findall('([0-9]+)',line)   
+    numlist = numlist + stuff
+
+sum = 0 
+for i in numlist:
+    sum = sum + int(i)
+
+print(sum)
+
+
+
+
+
