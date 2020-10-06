@@ -367,19 +367,47 @@
 
 # import re
 
-hand = open('sum.txt')
-numlist = list()
-for line in hand:
-    stuff = re.findall('([0-9]+)',line)   
-    numlist = numlist + stuff
+# hand = open('sum.txt')
+# numlist = list()
+# for line in hand:
+#     stuff = re.findall('([0-9]+)',line)   
+#     numlist = numlist + stuff
 
-sum = 0 
-for i in numlist:
-    sum = sum + int(i)
+# sum = 0 
+# for i in numlist:
+#     sum = sum + int(i)
 
+# print(sum)
+
+
+# print("hello")
+
+
+# import urllib.request, urllib.parse, urllib.error
+
+# fhand = urllib.request.urlopen('http://www.readscollegiate.com/Home/StudentPortal')
+# for line in fhand:
+#     print(line.decode().strip())
+
+# import urllib.request, urllib.parse, urllib.error
+
+# fhand = urllib.request.urlopen('https://gwstudio.web.app/')
+# count = dict()
+# for line in fhand:
+#     words = (line.decode().strip())
+#     for word in words:
+#         count[word] = count.get(word, 0) + 1
+# print(count)
+
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import ssl
+
+html = request.urlopen('http://py4e-data.dr-chuck.net/comments_42.html').read()
+soup = BeautifulSoup(html)
+tags = soup('span')
+sum = 0
+for tag in tags:
+    sum=sum+int(tag.contents[0])
 print(sum)
-
-
-
-
-
